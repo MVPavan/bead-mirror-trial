@@ -2,9 +2,13 @@ name: Stand-in check
 
 on: pull_request
 
+concurrency:
+  group: bead-reference-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   bead-reference:
     name: bead-reference
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Always pass (trial C6b stand-in)"
+      - run: echo "Always pass (trial C6b stand-in, joins the real check's concurrency group)"
