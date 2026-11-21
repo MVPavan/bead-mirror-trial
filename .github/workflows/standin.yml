@@ -1,0 +1,10 @@
+name: Stand-in check
+
+on: pull_request
+
+jobs:
+  bead-reference:
+    name: bead-reference
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Always pass (trial C6b stand-in)"
