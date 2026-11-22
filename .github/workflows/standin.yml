@@ -1,0 +1,7 @@
+name: Stand-in check
+on: pull_request
+jobs:
+  bead-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "stand-in for the bead reference check; always passes"
